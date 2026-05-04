@@ -61,6 +61,7 @@ class Program
         else if (GradePercentage >= 60)
         {
             LetterGrade = "D";
+            Console.WriteLine($"Your Grade is {LetterGrade}");
         }
 
         else
