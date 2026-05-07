@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 
 class Program
 {
@@ -11,63 +10,38 @@ class Program
     static void PrintUserGrade()
     {
         Console.Write("What is your grade percentage? ");
-        string UserInput = Console.ReadLine();
-        int GradePercentage = int.Parse(UserInput);
+        int gradePercentage = int.Parse(Console.ReadLine());
 
-        string LetterGrade = "";
+        string letterGrade;
 
-        if (GradePercentage >= 94)
+        if (gradePercentage >= 94)
+            letterGrade = "A";
+        else if (gradePercentage >= 90)
+            letterGrade = "A-";
+        else if (gradePercentage >= 87)
+            letterGrade = "B+";
+        else if (gradePercentage >= 84)
+            letterGrade = "B";
+        else if (gradePercentage >= 80)
+            letterGrade = "B-";
+        else if (gradePercentage >= 76)
+            letterGrade = "C+";
+        else if (gradePercentage >= 70)
+            letterGrade = "C";
+        else if (gradePercentage >= 60)
+            letterGrade = "D";
+        else
+            letterGrade = "F";
+
+        Console.WriteLine($"Your Grade is {letterGrade}");
+
+        if (gradePercentage >= 60)
         {
-            LetterGrade = "A";
-            Console.WriteLine($"Your Grade is {LetterGrade}");
+            Console.WriteLine("You passed the course.");
         }
-
-        else if (GradePercentage >= 90)
-        {
-            LetterGrade = "A-";
-            Console.WriteLine($"Your Grade is {LetterGrade}");
-        }
-
-        else if (GradePercentage >= 87)
-        {
-            LetterGrade = "B+";
-            Console.WriteLine($"Your Grade is { LetterGrade }");
-        }
-
-        else if (GradePercentage >= 84)
-        {
-            LetterGrade = "B";
-            Console.WriteLine($"Your Grade is { LetterGrade }");
-        }
-
-        else if (GradePercentage >= 80)
-        {
-            LetterGrade = "B-";
-            Console.WriteLine($"Your Grade is {LetterGrade}");
-        }
-
-        else if (GradePercentage >= 76)
-        {
-            LetterGrade = "C+";
-            Console.WriteLine($"Your Grade is {LetterGrade}");
-        }
-
-        else if (GradePercentage >= 70)
-        {
-            LetterGrade = "C";
-            Console.WriteLine($"Your Grade is {LetterGrade}");
-        }
-
-        else if (GradePercentage >= 60)
-        {
-            LetterGrade = "D";
-            Console.WriteLine($"Your Grade is {LetterGrade}");
-        }
-
         else
         {
-            LetterGrade = "F";
-            Console.WriteLine($"Your Grade is {LetterGrade}");
+            Console.WriteLine("You did not pass the course.");
         }
     }
 }
